@@ -1,0 +1,141 @@
+;vehicles common
+removeAfterInit: true
+scene->  k:/games/RigNRoll/Common/common_interior_res.wdb
+scene->  k:/games/RigNRoll/Common/fonar_res.wdb
+
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/interior_general_sources.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Truck_parts_resources.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Trucks_TexDwords.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels.wdb
+removeAfterInit: false
+
+; ******************************************** trucks ********************************************
+
+;                                   ********** Gepard **********
+;  Gepard
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Gepard/Gepard_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Gepard/Gepard_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Gepard/Gepard.wdb
+
+; toy Gepard
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/HJ_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/Gepard_toy.wdb
+
+
+;                                ********** Freightliner **********
+;  Freight_Argosy
+scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_cab_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy.wdb
+
+;  Freight_Century
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Century/Freight_Century_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Century/Freight_Century_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Century/Freight_Century.wdb
+
+;  Freight_Coronado
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Coronado/Freight_Coronado_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Coronado/Freight_Coronado_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Coronado/Freight_Coronado.wdb
+
+;  Freight_FLD120
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_FLD120/Freight_Classic_XL_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_FLD120/Freight_ClassicXL_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_FLD120/Freight_ClassicXL.wdb
+
+
+;                                  ********** Hercules **********
+;  Hercules_Atlas
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Atlas/Hercules_Atlas_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Atlas/Hercules_Atlas_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Atlas/Hercules_Atlas.wdb
+
+;  Hercules_Freedom
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Freedom/Hercules_Freedom_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Freedom/Hercules_Freedom_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Freedom/Hercules_Freedom.wdb
+
+;  Hercules_Liberty
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Liberty/Hercules_Liberty_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Liberty/Hercules_Liberty_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Liberty/Hercules_Liberty.wdb
+
+
+;                                  ********** Sterling **********
+;  Sterling_9500
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_9500/Sterling_9500_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_9500/Sterling_9500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_9500/Sterling_9500.wdb
+
+
+;                                   ********** Titan **********
+;  Titan_Alpine
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Alpine/Titan_Alpine_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Alpine/Titan_Alpine_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Alpine/Titan_Alpine.wdb
+
+;  Titan_El_Dorado
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_El_Dorado/Titan_El_Dorado_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_El_Dorado/Titan_El_Dorado_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_El_Dorado/Titan_El_Dorado.wdb
+
+;  Titan_Inyo
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Inyo/Titan_Inyo_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Inyo/Titan_Inyo_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Inyo/Titan_Inyo.wdb
+
+;  Titan_Ventura
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura/Titan_Ventura_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura/Titan_Ventura_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura/Titan_Ventura.wdb
+
+
+;                                ********** Western Star **********
+;  WesternStar_4900
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_4900/WesternStar_4900_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_4900/WesternStar_4900_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_4900/WesternStar_4900.wdb
+
+
+
+; ****************************************** DLC trucks ******************************************
+; есть проблемы с позициями и углами поворотов NodeGroup / has problems with NodeGroup trasnforms
+
+;  Freight_Sport
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Coronado/Freight_Coronado_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Sport/Freight_Sport_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Sport/Freight_Sport_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Sport/Freight_Sport.wdb
+
+;  Hercules_Sport
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Freedom/Hercules_Freedom_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Freedom/Hercules_Freedom_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Sport/Hercules_Sport_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Sport/Hercules_Sport_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Hercules_Sport/Hercules_Sport.wdb
+
+;  Sterling_Sport
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_9500/Sterling_9500_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_9500/Sterling_9500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_Sport/Sterling_9500_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_Sport/Sterling_9500_Sport_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Sterling_Sport/Sterling_9500_Sport.wdb
+
+;  Titan_Ventura_Sport
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura/Titan_Ventura_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura/Titan_Ventura_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura_Sport/Titan_Ventura_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura_Sport/Titan_Ventura_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Titan_Ventura_Sport/Titan_Sport.wdb
+
+;  WesternStar_Sport
+;scene->  k:/games/RigNRoll/Trucks/Trucks/Freight_Argosy/Freight_Argosy_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_4900/WesternStar_4900_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_4900/WesternStar_4900_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_Sport/WesternStar_4900_cab_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_Sport/WesternStar_4900_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Trucks/WesternStar_Sport/WesternStar_Sport.wdb

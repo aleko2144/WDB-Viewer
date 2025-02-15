@@ -1,0 +1,1 @@
+class_name WDB_NodeLocalLightData extends WDB_NodeLightData

@@ -1,0 +1,1 @@
+class_name WDB_NodeGlobalLight extends WDB_NodeLight

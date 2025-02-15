@@ -1,0 +1,211 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Oxnard (test)
+
+;removeAfterInit: false
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/houses_ab_res.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/police_res.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/ov_res.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_proc.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_terrain.wdb
+;removeAfterInit: false
+
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_01.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_02.wdb
+
+;Nick's office
+;entrypoint: Camera_Oxnard_office
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_03.wdb
+
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_04.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_05.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_07.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_08.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_23.wdb
+;scene->  k:/games/RigNRoll/GameWorld/Oxnard/OV_57.wdb
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;начальная позиция обозревателя задаётся либо параметром "startposition: <x> <y> <z>",
+;либо "entrypoint: <entrypoint_name>"
+;
+;startposition: -3193.7 23682.3 100.2
+;entrypoint: Camera_Oxnard_office
+;
+
+; Важно!!! Некоторые папки лучше не загружать целиком, а по частям отдельными wdb-файлами,
+; например, город Рино (GameWorld/Reno). При загрузке сразу всех файлов значительно
+; расходуется оперативная память и снижается работоспособность программы!
+
+
+
+; ****************************************** game world ******************************************
+; entrypoint переписаны с файла GameWorld/view.sch версии игры из магазина Steam
+
+; Внимание! Здесь указаны, в основном, только города, а не дороги между ними.
+; Если нужны промежуточные локации, то их нужно дописать в этот файл самостоятельно.
+
+; Alturas
+;  Camera_AL_01 / Camera_AL_03
+;entrypoint: Camera_AL_01
+;dir->  k:/games/RigNRoll/GameWorld/Alturas/
+
+; Atascadero
+;  Camera_Atsc
+;entrypoint: Camera_Atsc
+;dir->  k:/games/RigNRoll/GameWorld/Atascadero/
+
+; Bakersfield
+;entrypoint: Camera_BK_TruckStop
+;dir->  k:/games/RigNRoll/GameWorld/BK/
+
+; Barstow
+;entrypoint: CameraBarstow
+;dir->  k:/games/RigNRoll/GameWorld/Barstow/
+
+; Bishop:
+;entrypoint: Camera_BI_01
+;dir->  k:/games/RigNRoll/GameWorld/BI/
+
+; Bridgeport:
+;entrypoint: Camera_BR_01
+;dir->  k:/games/RigNRoll/GameWorld/BR/
+ 
+; Burney:
+;entrypoint: Camera_BN_01
+;dir->  k:/games/RigNRoll/GameWorld/BN/
+
+; Colfax
+;startposition: -3193.7 23682.3 100.2
+;dir->  k:/games/RigNRoll/GameWorld/Colfax/
+
+; Eureka:
+;entrypoint: CameraEr
+;dir->  k:/games/RigNRoll/GameWorld/Eureka/
+
+; Fresno:
+;entrypoint: Camera_Fresno_Center
+;dir->  k:/games/RigNRoll/GameWorld/Fr/
+
+; Greenfield:
+;entrypoint: Camera_gf
+;dir->  k:/games/RigNRoll/GameWorld/GF/
+
+; Kettleman City:
+;entrypoint: Camera_Kettlman
+;dir->  k:/games/RigNRoll/GameWorld/Km/
+  
+; Lebec:
+;entrypoint: Camera_Lebec_1
+;dir->  k:/games/RigNRoll/GameWorld/Lb/
+
+; Leggett:
+;entrypoint: Cam_Lgt
+;dir->  k:/games/RigNRoll/GameWorld/Leggett/
+
+; Lone Pine:
+;entrypoint: Camera_LP_01
+;dir->  k:/games/RigNRoll/GameWorld/LP/
+
+; Los Angeles:
+; !! если импортировать целиком, то программа в процессе использует
+;  до 12 Гб оперативной памяти!!
+;entrypoint: Camera_LA_baza
+;dir->  k:/games/RigNRoll/GameWorld/Los Angeles/
+
+; Manteсa: 
+;entrypoint: Camera_Manteca_01
+;dir->  k:/games/RigNRoll/GameWorld/Manteca/
+
+; Merced:
+;entrypoint: Camera_Merced
+;dir->  k:/games/RigNRoll/GameWorld/Merced/
+
+; Mr_Mn:
+;entrypoint: Camera_Mc_Mt
+;dir->  k:/games/RigNRoll/GameWorld/Mr_Mn/
+
+; Minden:
+;entrypoint: Camera_MD_01
+;dir->  k:/games/RigNRoll/GameWorld/MD/
+
+; Mi-Wuk Village:
+;entrypoint: Camera_MW_01
+;dir->  k:/games/RigNRoll/GameWorld/MW/
+
+; Mojave:
+;entrypoint: Camera_MJ_01
+;dir->  k:/games/RigNRoll/GameWorld/MJ/
+
+; Oakland:
+;entrypoint: Camera_Oakland
+;dir->  k:/games/RigNRoll/GameWorld/Oakland/
+
+; Oxnard:
+;entrypoint: Camera_Oxnard_Warehouse
+entrypoint: Camera_Oxnard_office
+dir->  k:/games/RigNRoll/GameWorld/Oxnard/
+
+; Orland:
+;entrypoint: Camera_OL_01
+;dir->  k:/games/RigNRoll/GameWorld/OL/
+
+; Palmdale - Lancaster:
+;entrypoint: Camera_PL_MJ
+;dir->  k:/games/RigNRoll/GameWorld/PL_MJ/
+
+; Patterson:
+;entrypoint: Camera_Patterson
+;dir->  k:/games/RigNRoll/GameWorld/Patterson/
+
+; Redding:
+;entrypoint: Camera_RD_01
+;dir->  k:/games/RigNRoll/GameWorld/RD/
+
+; Reno:
+;entrypoint: Camera_Reno03
+;dir->  k:/games/RigNRoll/GameWorld/Reno/
+   
+; Sacramento:
+;entrypoint: CameraScr_hw5
+;dir->  k:/games/RigNRoll/GameWorld/SR/
+
+; San Clemente:
+;entrypoint: Camera_SanClemente
+;dir->  k:/games/RigNRoll/GameWorld/San Clemente/
+
+; San Diego:                   
+;entrypoint: CameraDiego
+;dir->  k:/games/RigNRoll/GameWorld/San Diego/
+
+; San Francisco:
+;entrypoint: Camera_GGB
+;dir->  k:/games/RigNRoll/GameWorld/SF_AA/
+
+; San Jose:
+;entrypoint: Camera_sj
+;dir->  k:/games/RigNRoll/GameWorld/SJ/
+
+; Santa Barbara: 
+;entrypoint: Camera_SB
+;dir->  k:/games/RigNRoll/GameWorld/Santa Barbara/
+
+; Standish:
+;entrypoint: Camera_ST_01
+;dir->  k:/games/RigNRoll/GameWorld/ST/
+
+; Temecula:
+;entrypoint: Camera_temecula
+;dir->  k:/games/RigNRoll/GameWorld/Temecula/
+
+; Ukiah:
+;entrypoint: Camera_UK
+;dir->  k:/games/RigNRoll/GameWorld/Ukiah/
+
+; Victorville:
+;entrypoint: Camera_VV
+;scene-> k:/games/RigNRoll/Trucks/Waggons/waggons_resources.wdb
+;dir->   k:/games/RigNRoll/GameWorld/Victorville/
+
+; Weaverville:
+;entrypoint: Camera_WV
+;dir->  k:/games/RigNRoll/GameWorld/WV/

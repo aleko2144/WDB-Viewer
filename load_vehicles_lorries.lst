@@ -1,0 +1,74 @@
+;vehicles common
+removeAfterInit: true
+scene->  k:/games/RigNRoll/Common/fonar_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Truck_parts_resources.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Trucks_TexDwords.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels.wdb
+removeAfterInit: false
+
+
+;  Freight_FL60
+scene->  k:/games/RigNRoll/Trucks/Lorries/Freight_FL60/Freightliner_FL60_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Lorries/Freight_FL60/Freightliner_FL60.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Freight_FL60/Freightliner_FL60_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Freight_FL60/Freightliner_FL60_2.wdb
+
+
+;  GMC_Topkick4500
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_John_tr.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_John.wdb
+
+
+;  GMC_Topkick8500
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_TopKick8500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_Topkick8500.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_TopKick8500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_Topkick8500_Cistern.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_TopKick8500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_Topkick8500_Dump.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick4500/GMC_TopKick4500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_TopKick8500_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/GMC_Topkick8500/GMC_Topkick8500_Flat.wdb
+
+
+;  Hercules_Liberty
+; 4-axle
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_dmp_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_van_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_van.wdb
+; 2-axle
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_dmp_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_van_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_van2.wdb
+; 4-axle
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_dmp_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_dump.wdb
+; 3-axle
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_dmp_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_con_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Hercules_Liberty/Hercules_Liberty_con.wdb
+
+
+;  Freight_FL_65_Schlbus
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Freight_FL60/Freightliner_FL60_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Schoolbus/Freight_FL_65_Schlbus_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Schoolbus/Freight_FL_65_Schlbus.wdb
+
+
+;  Work_truck
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Work_truck/Work_truck_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Lorries/Work_truck/Work_truck.wdb

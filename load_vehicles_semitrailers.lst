@@ -1,0 +1,22 @@
+;vehicles common
+removeAfterInit: true
+scene->  k:/games/RigNRoll/Common/fonar_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Truck_parts_resources.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Trucks_TexDwords.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels.wdb
+removeAfterInit: false
+
+
+;  Car_carier
+;scene->  k:/games/RigNRoll/Trucks/Semitrailer/refrigerator_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Semitrailer/Car_carier_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Semitrailer/Car_carier.wdb
+
+;  Beverage
+;scene->  k:/games/RigNRoll/Trucks/Semitrailer/Beverage_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Semitrailer/Beverage.wdb
+
+;  Curtain_side
+scene->  k:/games/RigNRoll/Trucks/Semitrailer/Curtain_side_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Semitrailer/Curtain_side.wdb

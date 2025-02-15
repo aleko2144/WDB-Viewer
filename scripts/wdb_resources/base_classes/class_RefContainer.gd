@@ -1,0 +1,1 @@
+class_name WDB_RefContainer extends WDB_Ref

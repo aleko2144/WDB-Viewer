@@ -1,0 +1,1 @@
+class_name WDB_NodeCase extends WDB_NodeContainer

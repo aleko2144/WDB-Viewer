@@ -1,0 +1,1 @@
+class_name WDB_NodeSimpleSpace extends WDB_NodeContainer

@@ -1,0 +1,142 @@
+;удаляет сцены сразу после инициализации всех импортированных wdb
+;removeAfterInit: true
+; <список сцен, к которым будет применён параметр>
+;removeAfterInit: false
+
+;скрывает сцены сразу после инициализации всех импортированных wdb
+;hideAfterInit: true
+; <список сцен, к которым будет применён параметр>
+;hideAfterInit: false
+
+removeAfterInit: true
+
+scene->  k:/games/RigNRoll/Common/switch.wdb
+
+scene->  k:/games/RigNRoll/Common/anm_obj_res.wdb
+scene->  k:/games/RigNRoll/Common/advertisment_res.wdb
+
+scene->  k:/games/RigNRoll/Common/Attraction_res.wdb
+scene->  k:/games/RigNRoll/Common/Attraction_models.wdb
+
+scene->  k:/games/RigNRoll/Common/bar_res.wdb
+
+;слишком долгая инициализация
+;scene->  k:/games/RigNRoll/Common/Baza_bandits_res.wdb
+;scene->  k:/games/RigNRoll/Common/Baza_bandits.wdb
+
+scene->  k:/games/RigNRoll/Common/baza_res.wdb
+scene->  k:/games/RigNRoll/Common/menu_res.wdb
+
+
+scene->  k:/games/RigNRoll/Common/bistro_res.wdb
+scene->  k:/games/RigNRoll/Common/Bridges_res.wdb
+scene->  k:/games/RigNRoll/Common/buildings_res.wdb
+scene->  k:/games/RigNRoll/Common/bush_res.wdb
+scene->  k:/games/RigNRoll/Common/BW_res.wdb
+
+scene->  k:/games/RigNRoll/Common/common_res.wdb
+
+scene->  k:/games/RigNRoll/Common/cross_road_res.wdb
+
+scene->  k:/games/RigNRoll/Common/dnm_obj_res.wdb
+scene->  k:/games/RigNRoll/Common/dnm_obj_models.wdb
+scene->  k:/games/RigNRoll/Common/dnm_zont_models.wdb
+
+scene->  k:/games/RigNRoll/Common/DV_res.wdb
+scene->  k:/games/RigNRoll/Common/forest_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_cedar_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_cf_rn_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_common_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_desert_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_fruit_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_grass_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_la_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_leaf_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_legget_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_LV_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_oak_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_pine_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_reno_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_sequoia_res.wdb
+scene->  k:/games/RigNRoll/Common/forester_TI_res.wdb
+
+scene->  k:/games/RigNRoll/Common/grass__common__res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ab_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ac_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_bi_br_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_bk_mj_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_BN_AL_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_bp_mv_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_br_md_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_br_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_bt_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_cf_rn_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_er_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_fresn_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ggb_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_gl_sf_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ktl_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_la_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_legg_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_lp_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_mj_bs_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_mj_lp_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ov_lb_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ov_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_ov_sb_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_rd_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_reno_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_SB_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_sclm_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_scrt_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_SF_SZ_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_SM_MB_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_stone_res.wdb
+scene->  k:/games/RigNRoll/Common/grass_VV_LA_res.wdb
+
+scene->  k:/games/RigNRoll/Common/greenfield_mount_res.wdb
+scene->  k:/games/RigNRoll/Common/tree_res.wdb
+
+scene->  k:/games/RigNRoll/Common/terrain_res.wdb
+scene->  k:/games/RigNRoll/Common/Tower_res.wdb
+scene->  k:/games/RigNRoll/Common/trailer_res.wdb
+scene->  k:/games/RigNRoll/Common/train_res.wdb
+
+scene->  k:/games/RigNRoll/Common/REPAIR_new_res.wdb
+scene->  k:/games/RigNRoll/Common/RepairPoster_res.wdb
+scene->  k:/games/RigNRoll/Common/RepairPoster.wdb
+
+scene->  k:/games/RigNRoll/Common/common_interior_res.wdb
+scene->  k:/games/RigNRoll/Common/inter_vitr_res.wdb
+
+;модели интерьеров баз загрузки и СТО, скрыты, т.к. внутренние размеры больше внешних
+;т.е. интерьеры больше зданий, внутри которых расположены + есть проблемы позиционирования
+
+;scene->  k:/games/RigNRoll/Common/model_REPAIR_IN.wdb
+;scene->  k:/games/RigNRoll/Common/WarehouseExit.wdb
+;scene->  k:/games/RigNRoll/Common/WarehouseIn.wdb  
+
+scene->  k:/games/RigNRoll/Common/WarehouseOut.wdb
+
+scene->  k:/games/RigNRoll/Common/fonar_res.wdb
+
+
+scene->  k:/games/RigNRoll/Common/gas_station_res.wdb
+scene->  k:/games/RigNRoll/Common/industr_res.wdb
+scene->  k:/games/RigNRoll/Common/motels_res.wdb
+
+scene->  k:/games/RigNRoll/Common/Sign_res.wdb
+scene->  k:/games/RigNRoll/Common/signs_models.wdb
+
+
+scene->  k:/games/RigNRoll/Common/wgh_st_res.wdb
+scene->  k:/games/RigNRoll/Common/Parking_cars_res.wdb
+
+scene->  k:/games/RigNRoll/Common/sail_res.wdb
+scene->  k:/games/RigNRoll/Common/sand_trans_res.wdb
+scene->  k:/games/RigNRoll/Common/sea_ocean_res.wdb
+
+scene->  k:/games/RigNRoll/Common/Star_of_India_res.wdb
+scene->  k:/games/RigNRoll/Common/Star_of_India.wdb
+
+removeAfterInit: false

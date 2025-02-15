@@ -1,0 +1,1 @@
+class_name WDB_NodeOpt extends WDB_NodeContainer

@@ -1,0 +1,33 @@
+;при импорте моделей персонажей обязательно ставить флаг disableAutoSpace,
+;иначе модели будут расположены неправильно
+
+;отдельные части моделей нужно распологать вручную, импортировав их в любой 3D-редактор
+
+disableAutoSpace: true
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/IVAN_NEW_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/IVAN_NEW.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/DOROTY_NEW_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/DOROTY_NEW.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/MATTHEW_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/MATTHEW.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/POLICE_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/POLICE.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/KOHRAINE_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/KOHRAINE.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/JEY_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/JEY.wdb
+
+;scene->  k:/games/RigNRoll/Data/Actors/Pedestrians/models/Man_001HiPoly_res.wdb
+;scene->  k:/games/RigNRoll/Data/Actors/Pedestrians/models/Man_001HiPoly.wdb
+
+disableAutoSpace: false
+
+;игрушечный Гепард
+scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/HJ_res.wdb
+scene->  k:/games/RigNRoll/Data/Actors/ScreenPlay/models/Gepard_toy.wdb

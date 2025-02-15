@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://doiwqpqnaltj4"]
+
+[ext_resource type="Script" path="res://scripts/app_main.gd" id="1_unbft"]
+[ext_resource type="Script" path="res://scripts/utils/LogWriter.gd" id="2_rkndf"]
+[ext_resource type="Script" path="res://scripts/viewer/ViewerMovement.gd" id="3_abtso"]
+[ext_resource type="Script" path="res://scripts/WDBScenesContainer.gd" id="3_clhaq"]
+[ext_resource type="Script" path="res://scripts/viewer/Viewer.gd" id="3_mi8w4"]
+[ext_resource type="Script" path="res://scripts/viewer/ViewerGUI.gd" id="6_y1r28"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_26p7g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27tyy"]
+
+[sub_resource type="Sky" id="Sky_mgj3m"]
+sky_material = SubResource("ProceduralSkyMaterial_27tyy")
+
+[sub_resource type="Environment" id="Environment_idd07"]
+background_mode = 2
+sky = SubResource("Sky_mgj3m")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Application" type="Node3D"]
+script = ExtResource("1_unbft")
+
+[node name="LogWriter" type="Node" parent="."]
+script = ExtResource("2_rkndf")
+
+[node name="WDBScenes" type="Node3D" parent="."]
+script = ExtResource("3_clhaq")
+
+[node name="Viewer" type="Node3D" parent="."]
+script = ExtResource("3_mi8w4")
+
+[node name="ViewerMovement" type="Node" parent="Viewer"]
+script = ExtResource("3_abtso")
+
+[node name="Camera3D" type="Camera3D" parent="Viewer"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Viewer"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+spot_range = 50.0
+
+[node name="ViewerGUI" type="Control" parent="Viewer"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_y1r28")
+
+[node name="Label_Position" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_right = 94.0
+offset_bottom = 26.0
+text = "0.0 ; 0.0 ; 0.0"
+
+[node name="Label_FrameInfo" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 94.0
+offset_bottom = 40.0
+text = "0.0 ; 0.0 ; 0.0"
+
+[node name="Label_BackgroundMode" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 94.0
+offset_bottom = 68.0
+text = "background=sky"
+
+[node name="Label_DrawMode" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 150.0
+offset_bottom = 82.0
+text = "DrawMode: normal"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.73241)
+visible = false
+mesh = SubResource("CapsuleMesh_26p7g")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_idd07")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.482963, -0.12941, 0, 0.258819, 0.965926, 0.5, -0.836516, 0.224144, 0, 0, 0)
+visible = false
+light_energy = 0.5
+light_bake_mode = 0
+directional_shadow_blend_splits = true

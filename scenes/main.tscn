@@ -1,0 +1,180 @@
+[gd_scene load_steps=17 format=3 uid="uid://doiwqpqnaltj4"]
+
+[ext_resource type="Script" path="res://scripts/app_main.gd" id="1_unbft"]
+[ext_resource type="Script" path="res://scripts/utils/LogWriter.gd" id="2_rkndf"]
+[ext_resource type="Script" path="res://scripts/utils/LoaderUtils.gd" id="3_1dlji"]
+[ext_resource type="Script" path="res://scripts/viewer/ViewerMovement.gd" id="3_abtso"]
+[ext_resource type="Script" path="res://scripts/WDBScenesContainer.gd" id="3_clhaq"]
+[ext_resource type="Script" path="res://scripts/viewer/Viewer.gd" id="3_mi8w4"]
+[ext_resource type="Script" path="res://scripts/viewer/ViewerGUI.gd" id="6_y1r28"]
+[ext_resource type="Script" path="res://scripts/viewer/window_wdb_scenes.gd" id="8_on2fw"]
+[ext_resource type="Script" path="res://scripts/viewer/window_loading_bar.gd" id="9_e3wi4"]
+
+[sub_resource type="Gradient" id="Gradient_p053t"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.259961, 0.640697, 0.407253, 1, 0.501943, 0.902501, 0.797398, 1, 0.757101, 0.815822, 0.930458, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_htbsf"]
+gradient = SubResource("Gradient_p053t")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27tyy"]
+
+[sub_resource type="Sky" id="Sky_mgj3m"]
+sky_material = SubResource("ProceduralSkyMaterial_27tyy")
+
+[sub_resource type="Environment" id="Environment_idd07"]
+background_mode = 2
+sky = SubResource("Sky_mgj3m")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g360h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61ycu"]
+
+[node name="Application" type="Node3D"]
+script = ExtResource("1_unbft")
+
+[node name="LogWriter" type="Node" parent="."]
+script = ExtResource("2_rkndf")
+
+[node name="LoaderUtils" type="Node" parent="."]
+script = ExtResource("3_1dlji")
+
+[node name="WDBScenes" type="Node3D" parent="."]
+script = ExtResource("3_clhaq")
+
+[node name="Viewer" type="Node3D" parent="."]
+script = ExtResource("3_mi8w4")
+lock_input = false
+
+[node name="ViewerMovement" type="Node" parent="Viewer"]
+script = ExtResource("3_abtso")
+
+[node name="Camera3D" type="Camera3D" parent="Viewer"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+far = 100000.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Viewer"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+spot_range = 50.0
+
+[node name="ViewerGUI" type="Control" parent="Viewer"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_y1r28")
+
+[node name="Label_Position" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_right = 94.0
+offset_bottom = 26.0
+text = "0.0 ; 0.0 ; 0.0"
+
+[node name="Label_FrameInfo" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 94.0
+offset_bottom = 40.0
+text = "0.0 ; 0.0 ; 0.0"
+
+[node name="Label_BackgroundMode" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 94.0
+offset_bottom = 68.0
+text = "background=sky"
+
+[node name="Label_DrawMode" type="Label" parent="Viewer/ViewerGUI"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 150.0
+offset_bottom = 82.0
+text = "DrawMode=normal"
+
+[node name="dialog_File" type="FileDialog" parent="Viewer"]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(600, 512)
+ok_button_text = "Save"
+access = 2
+filters = PackedStringArray("*.gltf")
+
+[node name="window_WDBScenes" type="Window" parent="Viewer"]
+title = "WDB Structure View"
+initial_position = 1
+size = Vector2i(512, 600)
+visible = false
+script = ExtResource("8_on2fw")
+
+[node name="WDBTreeView" type="Tree" parent="Viewer/window_WDBScenes"]
+offset_right = 512.0
+offset_bottom = 600.0
+
+[node name="window_LoadingBar" type="Window" parent="Viewer"]
+position = Vector2i(0, 36)
+size = Vector2i(512, 86)
+visible = false
+mouse_passthrough = true
+script = ExtResource("9_e3wi4")
+
+[node name="ProgressBar" type="ProgressBar" parent="Viewer/window_LoadingBar"]
+offset_right = 512.0
+offset_bottom = 27.0
+
+[node name="FileLabel" type="Label" parent="Viewer/window_LoadingBar"]
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 234.0
+offset_bottom = 55.0
+text = "<test>"
+
+[node name="Label" type="Label" parent="Viewer/window_LoadingBar"]
+offset_top = 32.0
+offset_right = 106.0
+offset_bottom = 55.0
+text = "Current WDB:"
+
+[node name="VersionLabel" type="Label" parent="Viewer/window_LoadingBar"]
+offset_top = 55.0
+offset_right = 106.0
+offset_bottom = 78.0
+text = "Viewer version 0.3 (11.02.25)
+"
+
+[node name="LinkLabel" type="Label" parent="Viewer/window_LoadingBar"]
+offset_left = 374.0
+offset_top = 55.0
+offset_right = 510.0
+offset_bottom = 78.0
+text = "vk.com/rnr_mods
+"
+
+[node name="loadingBackground" type="TextureRect" parent="Viewer"]
+visible = false
+offset_right = 800.0
+offset_bottom = 600.0
+texture = SubResource("GradientTexture2D_htbsf")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_idd07")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.482963, -0.12941, 0, 0.258819, 0.965926, 0.5, -0.836516, 0.224144, 0, 0, 0)
+light_energy = 0.15
+light_bake_mode = 0
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 500.0
+
+[node name="test_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 1)
+visible = false
+mesh = SubResource("PlaneMesh_g360h")
+surface_material_override/0 = SubResource("StandardMaterial3D_61ycu")
+
+[connection signal="dir_selected" from="Viewer/dialog_File" to="Viewer" method="_on_dialog_file_dir_selected"]
+[connection signal="close_requested" from="Viewer/window_WDBScenes" to="Viewer/window_WDBScenes" method="_on_close_requested"]
+[connection signal="size_changed" from="Viewer/window_WDBScenes" to="Viewer/window_WDBScenes" method="_on_size_changed"]
+[connection signal="button_clicked" from="Viewer/window_WDBScenes/WDBTreeView" to="Viewer/window_WDBScenes" method="_on_wdb_tree_view_button_clicked"]
+[connection signal="item_activated" from="Viewer/window_WDBScenes/WDBTreeView" to="Viewer/window_WDBScenes" method="_on_wdb_tree_view_item_activated"]
