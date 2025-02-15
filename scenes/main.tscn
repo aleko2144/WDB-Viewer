@@ -45,7 +45,6 @@ script = ExtResource("3_clhaq")
 
 [node name="Viewer" type="Node3D" parent="."]
 script = ExtResource("3_mi8w4")
-lock_input = false
 
 [node name="ViewerMovement" type="Node" parent="Viewer"]
 script = ExtResource("3_abtso")
@@ -60,6 +59,7 @@ visible = false
 spot_range = 50.0
 
 [node name="ViewerGUI" type="Control" parent="Viewer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("6_y1r28")
@@ -113,7 +113,6 @@ offset_bottom = 600.0
 [node name="window_LoadingBar" type="Window" parent="Viewer"]
 position = Vector2i(0, 36)
 size = Vector2i(512, 86)
-visible = false
 mouse_passthrough = true
 script = ExtResource("9_e3wi4")
 
@@ -150,7 +149,6 @@ text = "vk.com/rnr_mods
 "
 
 [node name="loadingBackground" type="TextureRect" parent="Viewer"]
-visible = false
 offset_right = 800.0
 offset_bottom = 600.0
 texture = SubResource("GradientTexture2D_htbsf")

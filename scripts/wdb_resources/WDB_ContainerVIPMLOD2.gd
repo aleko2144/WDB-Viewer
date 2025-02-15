@@ -32,6 +32,6 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	
 	#а нужно ли добавлять их в сцену, если они и так есть в скрипте объекта?
 	if (errorMetrics): #чтобы не было ошибок при импорте
-		self.add_child(errorMetrics)
+		call_deferred("add_child", errorMetrics)
 	if (fixFace): #чтобы не было ошибок при импорте
-		self.add_child(fixFace)
+		call_deferred("add_child", fixFace)

@@ -31,9 +31,9 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 		var door : Node = loader.read_WDBNode(file, loader)
 		if (door):
 			doors.append(door)
-			self.add_child(door)
+			call_deferred("add_child", door)
 		
 	#while (file.get_position() < data_end_offset):
 	#	var child_obj : Node = loader.read_WDBNode(file, loader)
 	#	if (child_obj): #чтобы не было ошибок при импорте
-	#		self.add_child(child_obj)
+	#		call_deferred("add_child", child_obj)

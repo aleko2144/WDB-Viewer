@@ -23,7 +23,7 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	while (file.get_position() < data_end_offset):
 		var child_obj : Node = loader.read_WDBNode(file, loader)
 		if (child_obj): #чтобы не было ошибок при импорте
-			self.add_child(child_obj)
+			call_deferred("add_child", child_obj)
 
 func initialize() -> void:
 	if !self.objectData.ref.ref_obj:
@@ -37,8 +37,8 @@ func initialize() -> void:
 	
 	ref_object = self.objectData.refs[switch_value].ref_obj #.clone()
 	if (ref_object):
-		self.add_child(ref_object.duplicate())
-		#self.add_child(ref_object.clone())
+		call_deferred("add_child", ref_object.duplicate())
+		#call_deferred("add_child", ref_object.clone())
 
 func _process_bak(_delta: float) -> void:
 	if !self.objectData.ref.ref_obj:
@@ -56,7 +56,7 @@ func _process_bak(_delta: float) -> void:
 		
 		ref_object = self.objectData.refs[switch_value].ref_obj.clone()
 		if (ref_object):
-			self.add_child(ref_object.clone())
+			call_deferred("add_child", ref_object.clone())
 			
 	switch_value = dword.value
 	
@@ -75,4 +75,4 @@ func _process_bak(_delta: float) -> void:
 		
 		ref_object = self.objectData.refs[switch_value].ref_obj.clone()
 		if (ref_object):
-			self.add_child(ref_object.clone())
+			call_deferred("add_child", ref_object.clone())

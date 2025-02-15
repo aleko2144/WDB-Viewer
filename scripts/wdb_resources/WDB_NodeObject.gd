@@ -17,7 +17,7 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	for i in range(objectData.NumOfEntries):
 		var child_obj : Node = loader.read_WDBNode(file, loader)
 		if (child_obj): #чтобы не было ошибок при импорте
-			self.add_child(child_obj)
+			call_deferred("add_child", child_obj)
 
 func initialize(scene_root : Node, debug_meshes : bool, disableMeshesBindex : bool) -> void:
 	meshData = WDB_MeshConstructor.new()

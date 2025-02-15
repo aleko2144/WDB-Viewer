@@ -35,18 +35,18 @@ func read_WDBNode(file : StreamPeerBuffer, loader : WDB_FileLoader) -> Node:
 			#active_scene.switch_nodes.append(node)
 		108:
 			node = WDB_NodeEnvironment.new()
-		109:
-			node = WDB_NodeLocalSpotLight.new()
-		110:
-			node = WDB_NodeLocalPointLight.new()
-		111:
-			node = WDB_NodeLocalDirectionLight.new()
-		112:
-			node = WDB_NodeGlobalSpotLight.new()
-		113:
-			node = WDB_NodeGlobalPointLight.new()
-		114:
-			node = WDB_NodeGlobalDirectionLight.new()
+		#109:
+		#    node = WDB_NodeLocalSpotLight.new()
+		#110:
+		#    node = WDB_NodeLocalPointLight.new()
+		#111:
+		#    node = WDB_NodeLocalDirectionLight.new()
+		#112:
+		#    node = WDB_NodeGlobalSpotLight.new()
+		#113:
+		#    node = WDB_NodeGlobalPointLight.new()
+		#114:
+		#    node = WDB_NodeGlobalDirectionLight.new()
 		115:
 			node = WDB_NodeObject.new()
 			active_scene.object_nodes.append(node)
@@ -172,7 +172,6 @@ func read_WDBNode(file : StreamPeerBuffer, loader : WDB_FileLoader) -> Node:
 			active_scene.material_nodes.append(node)
 		321:
 			node = WDB_ContainerDWORD.new()
-			active_scene.dword_nodes.append(node)
 		322:
 			node = WDB_ContainerNotTypifiedData.new()
 		323:
@@ -229,7 +228,6 @@ func read_WDBNode(file : StreamPeerBuffer, loader : WDB_FileLoader) -> Node:
 			active_scene.data_nodes.append(node)
 		405: #not tested
 			node = WDB_ContainerRefTable.new()
-			active_scene.ref_table = node
 		406:
 			node = WDB_Header.new()
 		407:

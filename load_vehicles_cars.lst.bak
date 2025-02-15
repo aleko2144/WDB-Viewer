@@ -1,0 +1,101 @@
+;vehicles common
+removeAfterInit: true
+scene->  k:/games/RigNRoll/Common/fonar_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Truck_parts_resources.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/Trucks_TexDwords.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Common_Trucks/wheels.wdb
+removeAfterInit: false
+
+
+;                                        ***** Chevy *****
+;  Chevy_Avalanche
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Avalanche/Chevy_Avalanche_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Avalanche/Chevy_Avalanche.wdb
+
+;  Chevy_Cavalier
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Cavalier/Chevy_Cavalier_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Cavalier/Chevy_Cavalier.wdb
+
+;  Chevy_Express
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express_car_5.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Express/Chevy_Express_damage.wdb
+
+;  Chevy_Silverado
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Silverado/Chevy_Silverado_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Chevy_Silverado/Chevy_Silverado.wdb
+
+
+
+;                                        ***** Detroit *****
+;  Detroit_GC
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_GC/Detroit_GC_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_GC/Detroit_GC.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_GC/Detroit_GC_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_GC/Detroit_GC_5.wdb
+
+;  Detroit_Lionheart
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_Lionheart/Detroit_Lionheart_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Detroit_Lionheart/Detroit_Lionheart.wdb
+
+
+;                                          ***** JIT *****
+;  JIT_Diadem
+;scene->  k:/games/RigNRoll/Trucks/Cars/JIT_Diadem/JIT_Diadem_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/JIT_Diadem/JIT_Diadem.wdb
+
+
+;                                         ***** Lindum *****
+;  Lindum_Citycar
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar.wdb
+
+
+;                                         ***** Valter *****
+;  Valter_Traveller
+;scene->  k:/games/RigNRoll/Trucks/Cars/Valter_Traveller/Valter_Traveller_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Valter_Traveller/Valter_Traveller.wdb
+
+
+;                                          ***** Wade *****
+;  Wade_Fighter
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_taxi_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_taxi.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_taxi1_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_taxi1.wdb
+;
+;scene->  k:/games/RigNRoll/Trucks/Cars/Lindum_Citycar/Lindum_Citycar_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_police_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Fighter/Wade_Fighter_police.wdb
+
+;  Wade_Lasso
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Lasso/Wade_Lasso_lariat_res.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Lasso/Wade_Lasso_lariat.wdb
+;
+;Wade_Lasso_resources.wdb is unsupported WDB version (1000), but is has materials for Wade_Lasso_car_5.wdb
+;;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Lasso/Wade_Lasso_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Lasso/Wade_Lasso_car_5_resources.wdb
+;scene->  k:/games/RigNRoll/Trucks/Cars/Wade_Lasso/Wade_Lasso_car_5.wdb
+
+
+;                                         ***** Wolfsburg *****
+;  Wolfsburg_Ladybird
+scene->  k:/games/RigNRoll/Trucks/Cars/Wolfsburg_Ladybird/Wolfsburg_Ladybird_res.wdb
+scene->  k:/games/RigNRoll/Trucks/Cars/Wolfsburg_Ladybird/Wolfsburg_Ladybird.wdb

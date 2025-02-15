@@ -2,7 +2,7 @@ extends Node3D
 
 var position2D : Vector2
 
-@export  var lock_input : bool = true
+var lock_input : bool = true
 @onready var light_node : Node = self.get_node("SpotLight3D")
 var light_enabled : bool
 

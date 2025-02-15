@@ -1,16 +1,17 @@
-﻿;  ***** игровой мир / game world *****
+;  ***** игровой мир / game world *****
 ;include->./load_common.lst
 ;include->./load_world.lst
+
 
 ;  ***** транспорт / vehicles *****
 ; легковушки / cars
 ;include->./load_vehicles_cars.lst
 
 ; грузовики / lorries
-include->./load_vehicles_lorries.lst
+;include->./load_vehicles_lorries.lst
 
 ; тягачи / tractors
-;include->./load_vehicles_trucks.lst
+include->./load_vehicles_trucks.lst
 
 ; полуприцепы / semitrailers
 ;include->./load_vehicles_semitrailers.lst

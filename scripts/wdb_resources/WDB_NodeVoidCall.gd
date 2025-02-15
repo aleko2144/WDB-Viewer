@@ -16,7 +16,7 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	#while (file.get_position() < data_end_offset):
 	#	var child_obj : Node = loader.read_WDBNode(file, loader)
 	#	if (child_obj): #чтобы не было ошибок при импорте
-	#		self.add_child(child_obj)
+	#		call_deferred("add_child", child_obj)
 	#breakpoint
 
 func initialize() -> void:
@@ -26,7 +26,11 @@ func initialize() -> void:
 		if child.tag == 201: #RefToContainer
 			if (!child.ref_obj):
 				return
+			#E 0:04:32:0963   WDB_NodeVoidCall.gd:29 @ initialize():
+			#Child node disappeared while duplicating.
+
 			ref = child.ref_obj.duplicate()
-			self.add_child(ref)
+			##ref = child.ref_obj.call_deferred("duplicate")
+			call_deferred("add_child", ref)
 		
 	initialized = true

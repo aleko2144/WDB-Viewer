@@ -17,7 +17,6 @@ var posCall_nodes  : Array #объекты NodeCall (с позициониров
 var call_nodes     : Array #объекты NodeCall (без позиционирования)
 var viewer_nodes   : Array #объекты NodeViewer
 var function_nodes : Array #объекты NodeFunction
-var dword_nodes    : Array #объекты ContainerDWORD
 #var texture_nodes  : Array #объекты 
 #var drawing_nodes  : Array #объекты DrawPrimitive
 #var vertex_nodes  : Array #объекты VertexContainer
@@ -35,7 +34,7 @@ func new() -> void:
 	
 func LoadFromFile(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	#var header = WDB_Header.new()
-	#self.add_child(header)
+	#call_deferred("add_child", header)
 	
 	#header.LoadFromFile(file)
 	
@@ -47,7 +46,7 @@ func LoadFromFile(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	while (file.get_position() < data_end_offset):
 		var child_obj : Node = loader.read_WDBNode(file, loader)
 		if (child_obj): #чтобы не было ошибок при импорте
-			self.add_child(child_obj)
+			call_deferred("add_child", child_obj)
 
 #возвращает объект из ContainerRefTable1
 func getRefObjectById(id : int) -> Object:
@@ -68,12 +67,11 @@ func initializeReferences() -> void:
 func initializeScene(hide_LOD : bool, debug_meshes : bool, init_caseRefSwitch : bool, debug_materials : bool) -> void:
 	ref_table.initialize(self)
 	
-	if (hide_LOD):
-		for dword in dword_nodes:
-			dword.initialize()
-	
 	for obj in refToCnt_nodes:
 		obj.initialize(self)
+	
+	#for obj in refToCnt_nodes:
+	#	obj.checkRefObj(self)
 		
 	#for obj in refToMtp_nodes:
 	#	obj.initialize(self)
@@ -84,15 +82,6 @@ func initializeScene(hide_LOD : bool, debug_meshes : bool, init_caseRefSwitch : 
 	for nodeObject in object_nodes:
 		nodeObject.initialize(self, debug_meshes, disableAutoSpace)
 		#nodeObject.visible = false
-		
-	for caseRef in caseRef_nodes:
-		caseRef.initialize()
-		
-	for nodeCall in posCall_nodes:
-		nodeCall.initialize(disableAutoSpace)
-		
-	for nodeCall in call_nodes:
-		nodeCall.initialize()
 		
 	#прячет все объекты в NodeCaseRefSwitch, кроме первого
 	#breakpoint
@@ -131,17 +120,18 @@ func initializeScene(hide_LOD : bool, debug_meshes : bool, init_caseRefSwitch : 
 				break
 			if (ref_node.tag == 201): #RefToContainer
 				var space_node : Node = ref_node.ref_obj
+				#group.global_transform = space_node.global_transform
 				#group.set_transform(space_node.get_transform())
 				group.set_global_transform(space_node.get_global_transform())
 		
-	#for caseRef in caseRef_nodes:
-	#	caseRef.initialize()
+	for caseRef in caseRef_nodes:
+		caseRef.initialize()
 		
-	#for nodeCall in posCall_nodes:
-	#	nodeCall.initialize(disableAutoSpace)
+	for nodeCall in posCall_nodes:
+		nodeCall.initialize(disableAutoSpace)
 		
-	#for nodeCall in call_nodes:
-	#	nodeCall.initialize()
+	for nodeCall in call_nodes:
+		nodeCall.initialize()
 
 func clearArrays() -> void:
 	nodes_list.resize(0)
@@ -170,7 +160,7 @@ func optimizeScene() -> void:
 	
 	var mesh_container : Node3D = Node3D.new()
 	mesh_container.name = "meshes_container"
-	self.add_child(mesh_container)
+	call_deferred("add_child", mesh_container)
 	
 	for obj in meshes_list:
 		var original_transform : Transform3D = obj[1]
@@ -182,7 +172,7 @@ func optimizeScene() -> void:
 		self.get_child(i).queue_free()
 
 func exportAsGLTF(export_path : String) -> void:
-	if (!len(meshes_list)):
+	if (!len(unit_nodes)):
 		return
 	
 	export_path = export_path + self.name + '/'

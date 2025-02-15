@@ -305,5 +305,6 @@ func createMesh(debug_meshes : bool, disableBindex : bool) -> Node:
 		LogSystem.writeToErrorLogNoPrint(" * material = '%s'" % material_name)
 		LogSystem.writeToErrorLogNoPrint("")
 	
-	parent_node.add_child(MeshNode)
+	parent_node.call_deferred('add_child', MeshNode)
+	#parent_node.add_child(MeshNode)
 	return MeshNode

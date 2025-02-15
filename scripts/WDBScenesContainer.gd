@@ -20,7 +20,6 @@ func getNameFromPath(string : String, withFormat : bool) -> String:
 
 var total_import_time : float
 var total_init_time   : float
-
 func ImportFile(scn_par : Node, file_path : String, hideAfterInit : bool, removeAfterInit : bool, disableAutoSpace : bool) -> void:
 	var start_time : int = Time.get_ticks_msec()
 	var wdb_file : FileAccess = FileAccess.open(file_path, FileAccess.READ)
@@ -53,13 +52,13 @@ func ImportFile(scn_par : Node, file_path : String, hideAfterInit : bool, remove
 			LogWriter.writeErrorLogAndExit('Критическая ошибка при импорте файла "%s."' % [file_path], 'Указанный файл - не WDB!\nFile is not WDB!', "viewer_error.log")
 		else:
 			#DisplayServer.window_set_title('WDB Viewer :: importing "%s", please wait...' % wdb_name)
-			#call_deferred("add_child", WDB_obj)
-			self.add_child(WDB_obj)
+			call_deferred("add_child", WDB_obj)
+			#self.add_child(WDB_obj)
 			scene_importer.setActiveScene(WDB_obj)
 			scene_importer.setActiveSceneName(wdb_name)
 			
-			#WDB_obj.call_deferred("set_name", wdb_name)
-			WDB_obj.name = wdb_name
+			WDB_obj.call_deferred("set_name", wdb_name)
+			#WDB_obj.name = wdb_name
 			WDB_obj.LoadFromFile(wdb_buffer, scene_importer)
 			
 			
@@ -105,7 +104,7 @@ var unknown_material_par_mtl : Array
 var unknown_material_typ : Array
 var unknown_material_typ_mtl : Array
 
-func InitializeScenes(scn_par : Node, hide_LOD : bool, debug_meshes : bool, init_caseRefSwitch : bool, debug_materials : bool) -> void:
+func InitializeScenes(scn_par: Node, hide_LOD : bool, debug_meshes : bool, init_caseRefSwitch : bool, debug_materials : bool) -> void:
 	var wdb_res : Array #сцены с текстурами
 	var wdb_mesh : Array #сцены с моделями
 	var wdb_all : Array
@@ -113,7 +112,6 @@ func InitializeScenes(scn_par : Node, hide_LOD : bool, debug_meshes : bool, init
 	#зачем это? сначала надо инициализировать wdb с
 	#материалами и текстурами, а файлы с 3d-моделями
 	#в последнюю очередь
-	#var child_cnt : int = self.get_child_count()
 	var child_cnt : int = self.get_child_count()
 	for child in self.get_children():
 		#если нет UnitGroup, значит, файл с текстурами
@@ -141,9 +139,9 @@ func InitializeScenes(scn_par : Node, hide_LOD : bool, debug_meshes : bool, init
 		total_init_time += load_time
 		
 		iter += 1
-		scn_par.loading_scene_name = child.name
-		scn_par.current_action_name = "Initializing scenes..."
-		scn_par.init_value = (iter / scn_par.scenes_count_flt)
+		scn_par.get_parent().loading_scene_name = child.name
+		scn_par.get_parent().current_action_name = "Initializing scenes..."
+		scn_par.get_parent().init_value = (iter / scn_par.get_parent().scenes_count_flt)
 	
 	if (len(not_found_materials)):
 		print('%d materials NOT FOUND, check viewer_error.log' % len(not_found_materials))

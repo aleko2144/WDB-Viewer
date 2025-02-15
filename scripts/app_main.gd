@@ -64,12 +64,11 @@ func prepareWindow() -> void:
 	#win_y = -(target_win_res.y/2)
 	#loading_background.set_position(Vector2i(win_x, win_y))
 	
+var thread : Thread
 var loading_value : float
 var init_value    : float
 var current_action_name : String
 var loading_scene_name  : String
-
-var thread : Thread
 
 func _ready():
 	LogWriter = $LogWriter
@@ -126,56 +125,51 @@ func _ready():
 	
 	scenes_count_flt = len(scenes_load_list)
 	
-	#thread = Thread.new()
-	#thread.start(import_all_scenes.bind($WDBScenes), Thread.PRIORITY_NORMAL)
+	thread = Thread.new()
+	thread.start(import_all_scenes.bind($WDBScenes), Thread.PRIORITY_NORMAL)
 	#thread.start(import_all_scenes)
-	
-	#showLoadingBar()
-	
-	#var loading_window : Window = get_node("Viewer/window_LoadingBar")
-	#var loading_bar : ProgressBar = get_node("Viewer/window_LoadingBar/ProgressBar")
-	#var current_file : Label = get_node("Viewer/window_LoadingBar/FileLabel")
-	#var loading_background : TextureRect = get_node("Viewer/loadingBackground")
-	#var loading_texture : GradientTexture2D = loading_background.texture
-	
-	#thread = Thread.new()
-	#thread.start(drawLoadingBar.bind(self, loading_window, loading_bar, current_file, loading_background, loading_texture), Thread.PRIORITY_LOW)
-	#thread.set_thread_safety_checks_enabled(false)
-	
-	import_all_scenes()
+	#import_all_scenes()
 
 func _exit_tree() -> void:
 	thread.wait_to_finish()
 
-func read_all_WDB() -> void:
-	var iter : int = 0
-	for scn in scenes_load_list:
-		$WDBScenes.ImportFile(self, scn[0], scn[1], scn[2], scn[3])
-		iter += 1
-		loading_value = (iter / scenes_count_flt)
-
-	scenes_load_list.clear()
-	
-func init_all_WDB() -> void:
-	LogSystem.writeToOutputLog('\n-Init:------------------------------------------------')
-	$WDBScenes.InitializeScenes(self, hide_LOD, debug_meshes, init_caseRef, debug_materials)
-	$WDBScenes.printImportStats() 
-
-func import_all_scenes() -> void:
-	#thread.set_thread_safety_checks_enabled(false)
-	
+func import_all_scenes(WDBScenes : Node) -> void:
+	thread.set_thread_safety_checks_enabled(false)
 	LogSystem.writeToOutputLog('-Imports:----------------------------------------------')
 	#LogSystem.writeToOutputLog('------------------------------------------------------')
 	
-	read_all_WDB()
-	init_all_WDB()
+	var iter : int = 0
+	for scn in scenes_load_list:
+		#print("%s %s" % [scn[0], scn[1]])
+		#var thr = Thread.new()
+		#thr.start($SceneImporter.ImportScene.bind(scn[0], scn[1]))
+		
+		#$SceneImporter.ImportScene(scn[0], scn[1])
+		#print("%s %s" % [scn[0], scn[1]])
+		WDBScenes.ImportFile(self, scn[0], scn[1], scn[2], scn[3])
+		iter += 1
+		loading_value = (iter / scenes_count_flt)
+		#print(loading_value)
+		#print("%s %s %s" % [scn[0], scn[1], scn[2]])
+		
+		#scenes_load_list.append([loading_scene_name, loading_scene_hide])
 	
-	#hideLoadingBar()
+	#tick_start = Time.get_ticks_msec()
+	#are_scenes_loaded = true
+	scenes_load_list.clear()
+	
+	#DisplayServer.window_set_title('WDB Viewer :: initializing scenes, please wait...')
+	LogSystem.writeToOutputLog('\n-Init:------------------------------------------------')
+	#LogSystem.writeToOutputLog('------------------------------------------------------')
+	WDBScenes.InitializeScenes(WDBScenes, hide_LOD, debug_meshes, init_caseRef, debug_materials)
+	WDBScenes.printImportStats() 
+	
+	hideLoadingBar()
 	
 	if (!viewer_start_pos.is_equal_approx(Vector3(0, 0, 0))):
-		$WDBScenes.placeViewerToPos(viewer_start_pos)
+		WDBScenes.placeViewerToPos(viewer_start_pos)
 	elif (wdb_entrypoint):
-		$WDBScenes.placeViewerToNode(wdb_entrypoint)
+		WDBScenes.placeViewerToNode(wdb_entrypoint)
 		
 	#if (remove_res_scenes):
 	#	WDBScenes.OptimizeScenes()
@@ -336,50 +330,29 @@ func _init():
 var draw_loading_bar : bool = true
 
 func hideLoadingBar() -> void:
-	
 	var loading_window : Window = get_node("Viewer/window_LoadingBar")
 	var loading_background : TextureRect = get_node("Viewer/loadingBackground")
 	
 	draw_loading_bar = false
 		
 	get_node("Viewer").lock_input = false
-	get_node("Viewer/ViewerGUI").hide()
+	get_node("Viewer/ViewerGUI").visible = true
 		
-	loading_window.hide()
-	loading_background.hide()
-
-func showLoadingBar() -> void:
+	loading_window.visible = false
+	loading_background.visible = false
+	
+func drawLoadingBar() -> void:
 	var loading_window : Window = get_node("Viewer/window_LoadingBar")
+	var loading_bar : ProgressBar = get_node("Viewer/window_LoadingBar/ProgressBar")
+	var current_file : Label = get_node("Viewer/window_LoadingBar/FileLabel")
 	var loading_background : TextureRect = get_node("Viewer/loadingBackground")
+	var loading_texture : GradientTexture2D = loading_background.texture
 	
-	draw_loading_bar = true
-		
-	get_node("Viewer").lock_input = true
-	get_node("Viewer/ViewerGUI").visible = false
-		
-	loading_window.visible = true
-	loading_background.visible = true
-
-func drawLoadingBar(mainObj : Node, loading_window : Window, loading_bar : ProgressBar, current_file : Label, loading_background : TextureRect, loading_texture : GradientTexture2D) -> void:
-	#var loading_window : Window = mainObj.get_node("Viewer/window_LoadingBar")
-	#var loading_bar : ProgressBar = get_node("Viewer/window_LoadingBar/ProgressBar")
-	#var current_file : Label = get_node("Viewer/window_LoadingBar/FileLabel")
-	#var loading_background : TextureRect = get_node("Viewer/loadingBackground")
-	#var loading_texture : GradientTexture2D = loading_background.texture
-		
-	while (draw_loading_bar == true):
-		#print(mainObj.current_action_name)
-		loading_window.title = mainObj.current_action_name
-		loading_bar.value = (50.0 * (loading_value)) + (50.0 * init_value)
-		#current_file.text = loading_scene_name
+	loading_window.title = current_action_name
+	loading_bar.value = (50.0 * (loading_value)) + (50.0 * init_value)
+	current_file.text = loading_scene_name
 	
-		#loading_texture.gradient.offsets[1] = 0.2 + (0.6 * (loading_bar.value / 100.0))
-	
-		#loading_window.title = current_action_name
-		#loading_bar.value = (50.0 * (loading_value)) + (50.0 * init_value)
-		#current_file.text = loading_scene_name
-	
-		#loading_texture.gradient.offsets[1] = 0.2 + (0.6 * (loading_bar.value / 100.0))
+	loading_texture.gradient.offsets[1] = 0.2 + (0.6 * (loading_bar.value / 100.0))
 	
 	#if (loading_bar.value == 100.0):
 	#	draw_loading_bar = false
@@ -394,8 +367,8 @@ func drawLoadingBar(mainObj : Node, loading_window : Window, loading_bar : Progr
 	#	#loading_background.queue_free()
 
 func _process(_delta: float) -> void:
-	#if (draw_loading_bar == true):
-	#	drawLoadingBar()
+	if (draw_loading_bar == true):
+		drawLoadingBar()
 
 	#var loading_bar : ProgressBar = get_node("Viewer/LoadingProgressBar")
 	#loading_value = $WDBScenes.get_child_count() / scenes_total_cnt

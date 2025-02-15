@@ -8,22 +8,17 @@ func LoadFromBuffer(file : StreamPeerBuffer, loader : WDB_FileLoader) -> void:
 	#file.seek(file.get_position() + 0x24) #пропуск заголовка
 	
 	file.seek(file.get_position() + 4)
-	var WDB_version_bin : PackedByteArray = file.get_data(4)[1] #825241649
-	var WDB_VERSION : int = int(WDB_version_bin.get_string_from_utf8())
+	var WDB_version : PackedByteArray = file.get_data(4)[1] #825241649
 	
-	#get_parent().WDB_VERSION = WDB_VERSION
-	
-	if (WDB_VERSION == 1000):
-		pass
-	elif (WDB_VERSION == 1001):
-		file.seek(file.get_position() + 0x1C) #пропуск заголовка
-	else:
+	if (WDB_version.decode_u32(0) != 825241649):
 		var errorMsg : String
 		var wdbName : String = loader.scene_name
-		errorMsg = '"%s" - unsupported WDB version (only 1001 supported, but got %d)' % [wdbName, WDB_VERSION]
+		var wdbVersionStr : String = WDB_version.get_string_from_utf8()
+		errorMsg = '"%s" - unsupported WDB version (only 1001 supported, but got %s)' % [wdbName, wdbVersionStr]
 		LogSystem.writeToErrorLog(errorMsg)
 		breakpoint
 	
+	file.seek(file.get_position() + 0x1C) #пропуск заголовка
 	var contents_length = file.get_32()
 	
 	for i in range(contents_length):
